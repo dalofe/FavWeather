@@ -2,6 +2,7 @@ li {
     display: inline-block;
     cursor: pointer;
     width: 8rem;
+    background-color: white;
     border: 1px solid;
     border-radius: 0.25rem;
 }

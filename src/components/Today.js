@@ -3,7 +3,6 @@ import styles from './Today.module.css';
 export default function Today(props){
     return (
         <div className={styles.Today}>
-            Today:
             <div>
                 {props.data.current.condition.text} <img src={props.data.current.condition.icon} alt={props.data.current.condition.text} />
             </div>
