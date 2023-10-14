@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import ForecastList from './components/ForecastList';
+import Today from './components/Today';
 import './App.css';
 
 function App() {
@@ -27,7 +28,6 @@ function App() {
     if (firstRenderRef.current) {
       firstRenderRef.current = false;
     } else {
-      
       try {
         fetch(`https://api.weatherapi.com/v1/forecast.json?key=bae68f473c254769b3275439231210&q=${params.location}&days=${params.days}&aqi=no&alerts=no`)
           .then((response) => response.json())
@@ -50,17 +50,7 @@ function App() {
 
       {fetchedData && 
         <div>
-          Today:
-          <div>
-            {fetchedData.current.condition.text} <img src={fetchedData.current.condition.icon} alt={fetchedData.current.condition.text} />
-          </div>
-          <div>
-            {fetchedData.forecast.forecastday[0].day.maxtemp_c}º - {fetchedData.forecast.forecastday[0].day.mintemp_c}º 
-          </div>
-          <div>
-            Feels like {fetchedData.current.feelslike_c}º
-          </div>
-
+          <Today data={fetchedData} />
           <ForecastList list={fetchedData.forecast.forecastday}/>
         </div>
       }
