@@ -2,3 +2,26 @@
     background-color: #61cfff;
     border-radius: 0.25rem;
 }
+
+.TodayTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    grid-area: title;
+}
+
+.TodayCurrentTemp {
+    grid-area: currentTemp;
+    font-size: 3.5rem;
+}
+
+.TodayIcon {
+    grid-area: icon;
+}
+
+.TodayMinMax {
+    grid-area:  minMax;
+}
+
+.TodayFeelsLike {
+    grid-area: feelsLike;
+}
