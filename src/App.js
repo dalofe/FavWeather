@@ -1,25 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
+import ForecastList from './components/ForecastList';
 import './App.css';
-
-const ForecastItem = (props) => {
-  return (
-    <li>{props.item.date} - {props.item.day.condition.text} <img src={props.item.day.condition.icon} alt={props.item.day.condition.text} /></li>
-  )
-}
-
-const ForecastList = (props) => {
-  console.log(props.list);
-
-  return (
-    <div>
-      <ul>
-        {props.list.map( (forecastItem) => (
-          <ForecastItem key={forecastItem.date} item={forecastItem} />
-        ))}
-      </ul>
-    </div>
-  );
-};
 
 function App() {
   const firstRenderRef = useRef(true);
@@ -29,10 +10,10 @@ function App() {
 
   let params = {
     location: searchedPlace,
-    days: 10
+    days: 7
   }
 
-  console.log(fetchedData);
+  //console.log(fetchedData);
   
   const handleClick = () => {
     setData(!data);
@@ -59,7 +40,7 @@ function App() {
         console.error(error.message)
       }
     }
-  }, [data])
+  }, [data, params.location, params.days])
 
   return (
     <div className="App">

@@ -1,0 +1,11 @@
+li {
+    display: inline-block;
+    cursor: pointer;
+    width: 8rem;
+    border: 1px solid;
+    border-radius: 0.25rem;
+}
+
+li div:first-child {
+    font-weight: 700;
+}
