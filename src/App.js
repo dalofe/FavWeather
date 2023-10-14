@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import ForecastList from './components/ForecastList';
 import Today from './components/Today';
-import Heading from './components/Heading';
+import Search from './components/Search';
 import './App.css';
 
 function App() {
@@ -46,12 +46,12 @@ function App() {
   return (
     <div className="App">
       <div className="Container">
-        <Heading data={fetchedData} handleChange={handleChange} handleClick={handleClick} />
+        <Search data={fetchedData} handleChange={handleChange} handleClick={handleClick} />
         {fetchedData && 
           <>
             <div className="TodayContainer">
               <div>
-                <div>Today</div>
+              <h3>{`${fetchedData.location.name} (${fetchedData.location.country})`}</h3>
               </div>
               <Today data={fetchedData}/>
             </div>
