@@ -7,7 +7,7 @@
 .TodayGrid {
     display: grid;
     grid-template-areas: "icon temp info";
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -22,10 +22,13 @@
 
 .TodayIcon {
     grid-area: icon;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .TodayIcon img {
     display: block;
-    width: 60%;
+    width: 100%;
 }
 
 .TodayInfo {
@@ -37,5 +40,24 @@
 }
 
 .TodayTemp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     grid-area: temp;
+}
+
+.TodayMinTemp {
+    font-weight: 600;
+    color: #2A65CB;
+}
+
+.TodayMaxTemp {
+    font-weight: 600;
+    color: #CB2C2A;
+}
+
+@media screen and (min-width: 750px) {
+    .TodayGrid {
+        width: 60%;
+    }
 }

@@ -21,7 +21,13 @@ export default function Today(props){
                         {props.data.current.condition.text}
                     </div>
                     <div className={styles.TodayMinMax}>
-                        {Math.round(props.data.forecast.forecastday[0].day.mintemp_c)}º / {Math.round(props.data.forecast.forecastday[0].day.maxtemp_c)}º 
+                        <span className={styles.TodayMinTemp}>
+                            {Math.round(props.data.forecast.forecastday[0].day.mintemp_c)}º
+                        </span>
+                        <span> / </span>
+                        <span className={styles.TodayMaxTemp}>
+                            {Math.round(props.data.forecast.forecastday[0].day.maxtemp_c)}º
+                        </span>
                     </div>
                     <div>
                         Wind: {props.data.current.wind_dir} {props.data.current.wind_kph}km/h
