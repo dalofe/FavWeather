@@ -2,12 +2,15 @@
     display: flex;
     flex-direction: column;
     height: 10rem;
-    width: 8rem;
+    width: 9rem;
     padding: 0.5rem 0;
     background-color: white;
-    border: 1px solid;
     border-radius: 0.25rem;
     cursor: pointer;
+}
+
+.ForecastItem:hover {
+    background-color: rgba(0,71,102,0.1);
 }
 
 .ForecastItem div:first-child {

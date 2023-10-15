@@ -2,7 +2,7 @@
     display: grid;
     grid-template-areas: "time icon condition wind uv";
     grid-template-columns: 1fr 1fr 2fr 2fr 1fr;
-    width: 70%;
+    width: 100%;
     align-items: center;
     background-color: white;
 }

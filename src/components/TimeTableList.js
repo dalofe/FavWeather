@@ -4,7 +4,7 @@ export default function TimeTableList(props) {
     const now = new Date(Date.now());
 
     return (
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '1rem'}}>
             {props.list.hour.map( (TimeTableData) => {
                 const date = new Date(TimeTableData.time);
                 if(date > now) {
