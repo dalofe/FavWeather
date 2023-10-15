@@ -18,19 +18,32 @@ export default function ForecastItem (props) {
     }
     const dayMonth = `${date.getDate()} ${monthName[date.getMonth()]}`;
     
-    //<li className={styles.li}>{props.item.date} - {dataDay.condition.text} <img src={dataDay.condition.icon} alt={dataDay.condition.text} /></li>
-    
     return (
-        <li className={styles.li}>
+        <div className={styles.ForecastItem}>
             <div>{dayOfTheWeek}</div>
             <div>{dayMonth}</div>
-            <img src={dataDay.condition.icon} alt={dataDay.condition.text} />
             <div>
-            {dataDay.daily_will_it_rain &&
-                `${dataDay.daily_chance_of_rain}% - ${dataDay.totalprecip_mm}mm`
-            }
+                <img src={dataDay.condition.icon} alt={dataDay.condition.text} />
             </div>
-            <div>{dataDay.maxtemp_c}º / {dataDay.mintemp_c}º</div>
-        </li>
+            
+            {dataDay.daily_will_it_rain && 
+                <div className={styles.ForecastItemRain}>
+                    <div>
+                        {`${dataDay.daily_chance_of_rain}%`}
+                    </div>
+                    <div>
+                        {`${dataDay.totalprecip_mm}mm`}
+                    </div>
+                </div>
+            }
+            <div className={styles.ForecastItemTempWrapper}>
+                <span className={styles.ForecastItemMinTemp}>
+                    {dataDay.mintemp_c}º
+                </span> / 
+                <span className={styles.ForecastItemMaxTemp}>
+                    {dataDay.maxtemp_c}º
+                </span>
+            </div>
+        </div>
     );
 };

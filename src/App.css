@@ -21,6 +21,7 @@ h1 {
 .TodayContainer {
   display: grid;
   width: 100%;
-  grid-template-columns: 300px 1fr;
+  margin: 1rem 0;
+  grid-template-columns: 1fr 2fr;
   background-color: white;
 }
