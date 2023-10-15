@@ -27,7 +27,7 @@ export default function TimeTableItem(props) {
                 <div>{props.timeData.condition.text}</div>
                 <div>Feels like: {Math.round(props.timeData.feelslike_c)}º</div>
             </div>
-            <div className={styles.TimeTableItem_wind}>{props.timeData.wind_dir} {props.timeData.wind_kph}km/h</div>
+            <div className={styles.TimeTableItem_wind}>{props.timeData.wind_dir} {Math.round(props.timeData.wind_kph)}km/h</div>
             <div className={styles.TimeTableItem_uv}>
                 <div>UV: {props.timeData.uv}</div>
                 <div>{mapUvIndex(props.timeData.uv)}</div>
