@@ -26,7 +26,7 @@ export default function ForecastItem (props) {
                 <img src={dataDay.condition.icon} alt={dataDay.condition.text} />
             </div>
             
-            {dataDay.daily_will_it_rain && 
+            {(dataDay.daily_will_it_rain === 1) && 
                 <div className={styles.ForecastItemRain}>
                     <div>
                         {`${dataDay.daily_chance_of_rain}%`}
