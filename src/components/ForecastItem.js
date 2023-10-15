@@ -17,9 +17,13 @@ export default function ForecastItem (props) {
         dayOfTheWeek = dayName[date.getDay()];
     }
     const dayMonth = `${date.getDate()} ${monthName[date.getMonth()]}`;
+
+    const clickHandler = () => {
+        props.setPerHourList(props.item)
+    }
     
     return (
-        <div className={styles.ForecastItem}>
+        <div className={styles.ForecastItem} onClick={clickHandler}>
             <div>{dayOfTheWeek}</div>
             <div>{dayMonth}</div>
             <div>

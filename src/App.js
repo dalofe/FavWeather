@@ -58,7 +58,7 @@ function App() {
               </div>
               <Today data={fetchedData}/>
             </div>
-            <ForecastList list={fetchedData.forecast.forecastday}/>
+            <ForecastList list={fetchedData.forecast.forecastday} setPerHourList={setPerHourList} />
             <TimeTableList list={perHourList} />
           </>
         }
