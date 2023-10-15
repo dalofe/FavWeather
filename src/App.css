@@ -1,6 +1,6 @@
 .App {
   display: flex;
-  padding-top: 3rem;
+  padding: 3rem 1rem;
   text-align: center;
   height: 100vh;
   justify-content: center;
@@ -19,9 +19,14 @@ h1 {
 }
 
 .TodayContainer {
-  display: grid;
   width: 100%;
   margin: 1rem 0;
-  grid-template-columns: 1fr 2fr;
   background-color: white;
+}
+
+@media (min-width: 640px) {
+  .TodayContainer {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+  }
 }
