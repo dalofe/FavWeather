@@ -11,6 +11,7 @@ function App() {
   const [fetchedData, setFetchedData] = useState(undefined);
   const [searchedPlace, setSearchedPlace] = useState(undefined);
   const [perHourList, setPerHourList] = useState(undefined);
+  const [active, setActive] = useState(undefined);
 
   let params = {
     location: searchedPlace,
@@ -38,6 +39,7 @@ function App() {
             if (!res.error) {
               res.forecast.forecastday[0].isToday = true;
               setFetchedData(res);
+              setActive(res.forecast.forecastday[0].date);
               setPerHourList(res.forecast.forecastday[0]);
             }
           });
@@ -59,7 +61,7 @@ function App() {
               </div>
               <Today data={fetchedData}/>
             </div>
-            <ForecastList list={fetchedData.forecast.forecastday} setPerHourList={setPerHourList} />
+            <ForecastList list={fetchedData.forecast.forecastday} setPerHourList={setPerHourList} setActive={setActive} active={active} />
             <TimeTableList list={perHourList} />
           </>
         }

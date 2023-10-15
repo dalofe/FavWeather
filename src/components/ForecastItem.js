@@ -19,11 +19,15 @@ export default function ForecastItem (props) {
     const dayMonth = `${date.getDate()} ${monthName[date.getMonth()]}`;
 
     const clickHandler = () => {
+        props.setActive(props.item.date);
         props.setPerHourList(props.item)
     }
 
+    //console.log("ForecastItem props", props);
+    const ForecastItemClass = (props.active === props.item.date) ? `${styles.ForecastItem} ${styles.isActive}` : styles.ForecastItem;
+
     return (
-        <div className={styles.ForecastItem} onClick={clickHandler}>
+        <div className={ForecastItemClass} onClick={clickHandler}>
             <div>{dayOfTheWeek}</div>
             <div>{dayMonth}</div>
             <div>
