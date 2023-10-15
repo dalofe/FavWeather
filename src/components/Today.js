@@ -30,7 +30,7 @@ export default function Today(props){
                         </span>
                     </div>
                     <div>
-                        Wind: {props.data.current.wind_dir} {props.data.current.wind_kph}km/h
+                        Wind: {props.data.current.wind_dir} {Math.round(props.data.current.wind_kph)}km/h
                     </div>
                     <div>
                         Humidity: {props.data.current.humidity}%
