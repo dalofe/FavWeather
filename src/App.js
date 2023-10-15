@@ -9,6 +9,7 @@ const ForecastContext = createContext(undefined);
 
 function App() {
   const firstRenderRef = useRef(true);
+  const localDateRef = useRef();
   const [data, setData] = useState(false);
   const [fetchedData, setFetchedData] = useState(undefined);
   const [searchedPlace, setSearchedPlace] = useState(undefined);
@@ -16,7 +17,6 @@ function App() {
   const [active, setActive] = useState(undefined);
 
   const dayName = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const now = new Date(Date.now());
 
   let params = {
     location: searchedPlace,
@@ -44,6 +44,7 @@ function App() {
               setFetchedData(res);
               setActive(res.forecast.forecastday[0].date);
               setPerHourList(res.forecast.forecastday[0]);
+              localDateRef.current = new Date(res.location.localtime)
             }
           });
       } catch (error) {
@@ -62,7 +63,7 @@ function App() {
               <div>
                 <h3>{`${fetchedData.location.name} (${fetchedData.location.country})`}</h3>
                 <div>
-                  {`${now.getHours()}:${now.getMinutes()} | ${dayName[now.getDay()]}`}
+                  {`${localDateRef.current.getHours()}:${localDateRef.current.getMinutes()}hs | ${dayName[localDateRef.current.getDay()]}`}
                 </div>
               </div>
               <Today data={fetchedData}/>
@@ -74,7 +75,7 @@ function App() {
               }}>
               <ForecastList list={fetchedData.forecast.forecastday} />
             </ForecastContext.Provider>
-            <TimeTableList list={perHourList} />
+            <TimeTableList list={perHourList} localDateNow={localDateRef.current} />
           </>
         }
       </div>
