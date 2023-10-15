@@ -1,5 +1,6 @@
 .App {
   display: flex;
+  box-sizing: border-box;
   padding: 3rem 1rem;
   text-align: center;
   height: 100vh;

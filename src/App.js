@@ -19,8 +19,6 @@ function App() {
     location: searchedPlace,
     days: 7
   }
-
-  //console.log(fetchedData);
   
   const handleClick = () => {
     setData(!data);
@@ -64,10 +62,10 @@ function App() {
               <Today data={fetchedData}/>
             </div>
             <ForecastContext.Provider value={{
-              setPerHourList: setPerHourList,
-              setActive: setActive,
-              active: active
-            }}>
+                setPerHourList: setPerHourList,
+                setActive: setActive,
+                active: active
+              }}>
               <ForecastList list={fetchedData.forecast.forecastday} />
             </ForecastContext.Provider>
             <TimeTableList list={perHourList} />
