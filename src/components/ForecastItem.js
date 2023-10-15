@@ -1,6 +1,10 @@
+import { useContext } from 'react';
+import { ForecastContext } from '../App';
 import styles from './ForecastItem.module.css';
 
 export default function ForecastItem (props) {
+    const forecastContextData = useContext(ForecastContext);
+    
     const dayName = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const monthName = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     const date = new Date(props.item.date);
@@ -19,12 +23,12 @@ export default function ForecastItem (props) {
     const dayMonth = `${date.getDate()} ${monthName[date.getMonth()]}`;
 
     const clickHandler = () => {
-        props.setActive(props.item.date);
-        props.setPerHourList(props.item)
+        forecastContextData.setActive(props.item.date);
+        forecastContextData.setPerHourList(props.item)
     }
 
     //console.log("ForecastItem props", props);
-    const ForecastItemClass = (props.active === props.item.date) ? `${styles.ForecastItem} ${styles.isActive}` : styles.ForecastItem;
+    const ForecastItemClass = (forecastContextData.active === props.item.date) ? `${styles.ForecastItem} ${styles.isActive}` : styles.ForecastItem;
 
     return (
         <div className={ForecastItemClass} onClick={clickHandler}>

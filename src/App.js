@@ -1,9 +1,11 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, createContext } from 'react';
 import ForecastList from './components/ForecastList';
 import Today from './components/Today';
 import Search from './components/Search';
 import TimeTableList from './components/TimeTableList';
 import './App.css';
+
+const ForecastContext = createContext(undefined);
 
 function App() {
   const firstRenderRef = useRef(true);
@@ -61,7 +63,13 @@ function App() {
               </div>
               <Today data={fetchedData}/>
             </div>
-            <ForecastList list={fetchedData.forecast.forecastday} setPerHourList={setPerHourList} setActive={setActive} active={active} />
+            <ForecastContext.Provider value={{
+              setPerHourList: setPerHourList,
+              setActive: setActive,
+              active: active
+            }}>
+              <ForecastList list={fetchedData.forecast.forecastday} />
+            </ForecastContext.Provider>
             <TimeTableList list={perHourList} />
           </>
         }
@@ -70,4 +78,5 @@ function App() {
   );
 }
 
+export {ForecastContext};
 export default App;
