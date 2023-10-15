@@ -38,10 +38,11 @@ export default function ForecastItem (props) {
             }
             <div className={styles.ForecastItemTempWrapper}>
                 <span className={styles.ForecastItemMinTemp}>
-                    {dataDay.mintemp_c}º
-                </span> / 
+                    {Math.round(dataDay.mintemp_c)}º
+                </span>
+                <span> / </span>
                 <span className={styles.ForecastItemMaxTemp}>
-                    {dataDay.maxtemp_c}º
+                    {Math.round(dataDay.maxtemp_c)}º
                 </span>
             </div>
         </div>

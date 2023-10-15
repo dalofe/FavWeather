@@ -16,7 +16,7 @@ export default function Today(props){
                 </div>
             </div>
             <div className={styles.TodayMinMax}>
-                {props.data.forecast.forecastday[0].day.maxtemp_c}º - {props.data.forecast.forecastday[0].day.mintemp_c}º 
+                {Math.round(props.data.forecast.forecastday[0].day.maxtemp_c)}º / {Math.round(props.data.forecast.forecastday[0].day.mintemp_c)}º 
             </div>
             <div className={styles.TodayFeelsLike}>
                 Feels like {props.data.current.feelslike_c}º
