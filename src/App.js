@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import ForecastList from './components/ForecastList';
 import Today from './components/Today';
 import Search from './components/Search';
+import TimeTableList from './components/TimeTableList';
 import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   const [data, setData] = useState(false);
   const [fetchedData, setFetchedData] = useState(undefined);
   const [searchedPlace, setSearchedPlace] = useState(undefined);
+  const [perHourList, setPerHourList] = useState(undefined);
 
   let params = {
     location: searchedPlace,
@@ -35,6 +37,7 @@ function App() {
           .then((res) => {
             if (!res.error) {
               setFetchedData(res);
+              setPerHourList({...res.forecast.forecastday[0], isToday: true});
             }
           });
       } catch (error) {
@@ -56,6 +59,7 @@ function App() {
               <Today data={fetchedData}/>
             </div>
             <ForecastList list={fetchedData.forecast.forecastday}/>
+            <TimeTableList list={perHourList} />
           </>
         }
       </div>

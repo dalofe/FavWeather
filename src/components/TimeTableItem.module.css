@@ -1,0 +1,27 @@
+.TimeTableItem {
+    display: grid;
+    grid-template-areas: "time icon condition wind uv";
+    grid-template-columns: 1fr 1fr 2fr 2fr 1fr;
+    background-color: white;
+    width: 70%;
+}
+
+.TimeTableItem_time {
+    grid-area: time;
+}
+
+.TimeTableItem_icon {
+    grid-area: icon;
+}
+
+.TimeTableItem_condition {
+    grid-area: condition;
+}
+
+.TimeTableItem_wind {
+    grid-area: wind;
+}
+
+.TimeTableItem_uv {
+    grid-area: uv;
+}

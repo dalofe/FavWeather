@@ -1,7 +1,6 @@
 import styles from './Today.module.css';
 
 export default function Today(props){
-    console.log("props", props);
     return (
         <div className={styles.Today}>
             <div className={styles.TodayTitle}>
