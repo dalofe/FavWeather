@@ -36,15 +36,16 @@ function App() {
           .then((response) => response.json())
           .then((res) => {
             if (!res.error) {
+              res.forecast.forecastday[0].isToday = true;
               setFetchedData(res);
-              setPerHourList({...res.forecast.forecastday[0], isToday: true});
+              setPerHourList(res.forecast.forecastday[0]);
             }
           });
       } catch (error) {
         console.error(error.message)
       }
     }
-  }, [data, params.location, params.days])
+  }, [data, params.location, params.days]);
 
   return (
     <div className="App">
@@ -54,7 +55,7 @@ function App() {
           <>
             <div className="TodayContainer">
               <div>
-              <h3>{`${fetchedData.location.name} (${fetchedData.location.country})`}</h3>
+                <h3>{`${fetchedData.location.name} (${fetchedData.location.country})`}</h3>
               </div>
               <Today data={fetchedData}/>
             </div>

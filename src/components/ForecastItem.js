@@ -21,7 +21,7 @@ export default function ForecastItem (props) {
     const clickHandler = () => {
         props.setPerHourList(props.item)
     }
-    
+
     return (
         <div className={styles.ForecastItem} onClick={clickHandler}>
             <div>{dayOfTheWeek}</div>
