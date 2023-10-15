@@ -15,6 +15,9 @@ function App() {
   const [perHourList, setPerHourList] = useState(undefined);
   const [active, setActive] = useState(undefined);
 
+  const dayName = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const now = new Date(Date.now());
+
   let params = {
     location: searchedPlace,
     days: 7
@@ -58,6 +61,9 @@ function App() {
             <div className="TodayContainer">
               <div>
                 <h3>{`${fetchedData.location.name} (${fetchedData.location.country})`}</h3>
+                <div>
+                  {`${now.getHours()}:${now.getMinutes()} | ${dayName[now.getDay()]}`}
+                </div>
               </div>
               <Today data={fetchedData}/>
             </div>
