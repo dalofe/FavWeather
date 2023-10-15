@@ -11,14 +11,14 @@ export default function Today(props){
                     className={styles.TodayIcon} 
                     src={props.data.current.condition.icon} alt={props.data.current.condition.text} />
                 <div className={styles.TodayCurrentTemp}>
-                    28º
+                    {props.data.current.temp_c}º
                 </div>
             </div>
             <div className={styles.TodayMinMax}>
                 {Math.round(props.data.forecast.forecastday[0].day.maxtemp_c)}º / {Math.round(props.data.forecast.forecastday[0].day.mintemp_c)}º 
             </div>
             <div className={styles.TodayFeelsLike}>
-                Feels like {props.data.current.feelslike_c}º
+                Feels like {Math.round(props.data.current.feelslike_c)}º
             </div>
         </div>
     );
