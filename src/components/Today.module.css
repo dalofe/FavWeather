@@ -1,27 +1,41 @@
 .Today {
+    padding: 1rem;
     background-color: #61cfff;
     border-radius: 0.25rem;
+}
+
+.TodayGrid {
+    display: grid;
+    grid-template-areas: "icon temp info";
+    width: 60%;
+    margin: 0 auto;
 }
 
 .TodayTitle {
     font-size: 1.5rem;
     font-weight: 700;
-    grid-area: title;
 }
 
 .TodayCurrentTemp {
-    grid-area: currentTemp;
     font-size: 3.5rem;
 }
 
 .TodayIcon {
     grid-area: icon;
 }
-
-.TodayMinMax {
-    grid-area:  minMax;
+.TodayIcon img {
+    display: block;
+    width: 60%;
 }
 
-.TodayFeelsLike {
-    grid-area: feelsLike;
+.TodayInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: info;
+    font-size: 0.75rem;
+}
+
+.TodayTemp {
+    grid-area: temp;
 }
