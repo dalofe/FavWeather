@@ -81,6 +81,9 @@ function App() {
             <TimeTableList list={perHourList} localDateNow={localDateRef.current} />
           </>
         }
+        <div className="Credits">
+          Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a>
+        </div>
       </div>
     </div>
   );

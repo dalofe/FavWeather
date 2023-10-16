@@ -6,7 +6,7 @@ html, body, #root {
   display: flex;
   align-items: stretch;
   box-sizing: border-box;
-  padding: 3rem 1rem;
+  padding: 3rem 1rem 1rem;
   text-align: center;
   justify-content: center;
   background-color: #eceeef;
@@ -36,6 +36,12 @@ h1 {
 
 .TodayContainer > div {
   padding-bottom: 1rem;
+}
+
+.Credits {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-size: 0.8rem;
 }
 
 @media (min-width: 640px) {
