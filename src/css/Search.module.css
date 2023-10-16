@@ -7,13 +7,13 @@
     display: inline-block;
     width: 100%;
     padding: 0.25rem 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 .SearchClearButton {
     position: absolute;
     width: 2rem;
-    height: 2.5rem;
+    height: 2rem;
     right: 1rem;
     font-size: 1.25rem;
     background-color: transparent;

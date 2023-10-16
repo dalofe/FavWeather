@@ -20,6 +20,10 @@
 .TimeTableItem_condition {
     grid-area: condition;
 }
+.TimeTableItem_condition > div:first-child {
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
 
 .TimeTableItem_wind {
     grid-area: wind;
