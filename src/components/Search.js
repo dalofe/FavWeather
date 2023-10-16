@@ -7,8 +7,9 @@ export default function Search(props) {
                 type="text" 
                 onChange={props.handleChange}
                 className={styles.SearchInput}
+                value={props.searchedPlace}
             />
-            <button onClick={props.handleClick}>Search</button>
+            {props.searchedPlace && <button className={styles.SearchClearButton} onClick={props.handleClick}>x</button>}
         </div>
     );
 };

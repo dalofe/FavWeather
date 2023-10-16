@@ -9,3 +9,14 @@
     padding: 0.25rem 0.5rem;
     font-size: 1.5rem;
 }
+
+.SearchClearButton {
+    position: absolute;
+    width: 2rem;
+    height: 2.5rem;
+    right: 1rem;
+    font-size: 1.25rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}

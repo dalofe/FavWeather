@@ -11,9 +11,8 @@ function App() {
   const firstRenderRef = useRef(true);
   const localDateRef = useRef();
   const AppClassName = useRef("App height100");
-  const [data, setData] = useState(false);
   const [fetchedData, setFetchedData] = useState(undefined);
-  const [searchedPlace, setSearchedPlace] = useState(undefined);
+  const [searchedPlace, setSearchedPlace] = useState('');
   const [perHourList, setPerHourList] = useState(undefined);
   const [active, setActive] = useState(undefined);
 
@@ -24,8 +23,8 @@ function App() {
     days: 7
   }
   
-  const handleClick = () => {
-    setData(!data);
+  const clearSearchInput = () => {
+    setSearchedPlace('');
   }
 
   const handleChange = (e) => {
@@ -36,29 +35,31 @@ function App() {
     if (firstRenderRef.current) {
       firstRenderRef.current = false;
     } else {
-      try {
-        fetch(`https://api.weatherapi.com/v1/forecast.json?key=bae68f473c254769b3275439231210&q=${params.location}&days=${params.days}&aqi=no&alerts=no`)
-          .then((response) => response.json())
-          .then((res) => {
-            if (!res.error) {
-              res.forecast.forecastday[0].isToday = true;
-              setFetchedData(res);
-              setActive(res.forecast.forecastday[0].date);
-              setPerHourList(res.forecast.forecastday[0]);
-              localDateRef.current = new Date(res.location.localtime);
-              AppClassName.current = "App";
-            }
-          });
-      } catch (error) {
-        console.error(error.message)
+      if(searchedPlace.length > 3) {
+        try {
+          fetch(`https://api.weatherapi.com/v1/forecast.json?key=bae68f473c254769b3275439231210&q=${params.location}&days=${params.days}&aqi=no&alerts=no`)
+            .then((response) => response.json())
+            .then((res) => {
+              if (!res.error) {
+                res.forecast.forecastday[0].isToday = true;
+                setFetchedData(res);
+                setActive(res.forecast.forecastday[0].date);
+                setPerHourList(res.forecast.forecastday[0]);
+                localDateRef.current = new Date(res.location.localtime);
+                AppClassName.current = "App";
+              }
+            });
+        } catch (error) {
+          console.error(error.message)
+        }
       }
     }
-  }, [data, params.location, params.days]);
+  }, [searchedPlace]);
 
   return (
     <div className={AppClassName.current}>
       <div className="Container">
-        <Search data={fetchedData} handleChange={handleChange} handleClick={handleClick} />
+        <Search searchedPlace={searchedPlace} handleChange={handleChange} handleClick={clearSearchInput} />
         {fetchedData && 
           <>
             <div className="TodayContainer">
