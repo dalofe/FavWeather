@@ -1,5 +1,5 @@
 import ForecastItem  from "./ForecastItem";
-import styles from "./ForecastList.module.css";
+import styles from "../css/ForecastList.module.css";
 
 export default function ForecastList(props) {
     return (

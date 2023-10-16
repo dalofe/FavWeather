@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { ForecastContext } from '../App';
-import styles from './ForecastItem.module.css';
+import styles from '../css/ForecastItem.module.css';
 
 export default function ForecastItem (props) {
     const forecastContextData = useContext(ForecastContext);

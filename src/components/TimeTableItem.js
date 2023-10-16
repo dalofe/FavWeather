@@ -1,4 +1,4 @@
-import styles from './TimeTableItem.module.css';
+import styles from '../css/TimeTableItem.module.css';
 
 export default function TimeTableItem(props) {
     const time = `${props.hours}:00`;

@@ -1,4 +1,4 @@
-import styles from './Today.module.css';
+import styles from '../css/Today.module.css';
 
 export default function Today(props){
     return (
