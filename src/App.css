@@ -1,11 +1,19 @@
+html, body, #root {
+  height: 100%;
+}
+
 .App {
   display: flex;
+  align-items: stretch;
   box-sizing: border-box;
   padding: 3rem 1rem;
   text-align: center;
-  height: 100vh;
   justify-content: center;
   background-color: #eceeef;
+}
+
+.height100 {
+  height: 100%;
 }
 
 h1 {

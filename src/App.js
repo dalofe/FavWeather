@@ -10,6 +10,7 @@ const ForecastContext = createContext(undefined);
 function App() {
   const firstRenderRef = useRef(true);
   const localDateRef = useRef();
+  const AppClassName = useRef("App height100");
   const [data, setData] = useState(false);
   const [fetchedData, setFetchedData] = useState(undefined);
   const [searchedPlace, setSearchedPlace] = useState(undefined);
@@ -44,7 +45,8 @@ function App() {
               setFetchedData(res);
               setActive(res.forecast.forecastday[0].date);
               setPerHourList(res.forecast.forecastday[0]);
-              localDateRef.current = new Date(res.location.localtime)
+              localDateRef.current = new Date(res.location.localtime);
+              AppClassName.current = "App";
             }
           });
       } catch (error) {
@@ -54,7 +56,7 @@ function App() {
   }, [data, params.location, params.days]);
 
   return (
-    <div className="App">
+    <div className={AppClassName.current}>
       <div className="Container">
         <Search data={fetchedData} handleChange={handleChange} handleClick={handleClick} />
         {fetchedData && 

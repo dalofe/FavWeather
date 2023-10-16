@@ -27,7 +27,6 @@ export default function ForecastItem (props) {
         forecastContextData.setPerHourList(props.item)
     }
 
-    //console.log("ForecastItem props", props);
     const ForecastItemClass = (forecastContextData.active === props.item.date) ? `${styles.ForecastItem} ${styles.isActive}` : styles.ForecastItem;
 
     return (

@@ -6,6 +6,7 @@
     align-items: center;
     background-color: white;
     border-bottom: 1px solid #d7d7d7;
+    font-size: 0.8rem;
 }
 
 .TimeTableItem_time {
@@ -26,4 +27,10 @@
 
 .TimeTableItem_uv {
     grid-area: uv;
+}
+
+@media screen and (min-width: 640px) {
+    .TimeTableItem {
+        font-size: 1rem;
+    }
 }
