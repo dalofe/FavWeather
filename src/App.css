@@ -23,6 +23,11 @@ h1 {
   width: 100%;
   margin: 1rem 0;
   background-color: white;
+  border-radius: 0.25rem;
+}
+
+.TodayContainer > div {
+  padding-bottom: 1rem;
 }
 
 @media (min-width: 640px) {

@@ -1,7 +1,8 @@
 .Today {
     padding: 1rem;
     background-color: #61cfff;
-    border-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
 }
 
 .TodayGrid {
@@ -54,6 +55,13 @@
 .TodayMaxTemp {
     font-weight: 600;
     color: #CB2C2A;
+}
+
+@media screen and (min-width: 640px) {
+    .Today {
+        border-top-right-radius: 0.25rem;
+        border-bottom-left-radius: 0;
+    }
 }
 
 @media screen and (min-width: 750px) {

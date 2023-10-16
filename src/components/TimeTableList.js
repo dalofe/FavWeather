@@ -1,8 +1,9 @@
 import TimeTableItem from "./TimeTableItem";
+import styles from "../css/TimeTableList.module.css";
 
 export default function TimeTableList(props) {    
     return (
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '1rem'}}>
+        <div className={styles.TimeTableList}>
             {props.list.hour.map( (TimeTableData, index) => {
                 const date = new Date(TimeTableData.time);
                 if(props.list.isToday){
