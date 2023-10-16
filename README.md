@@ -1,10 +1,14 @@
-# Getting Started with Create React App
+# Getting Started with FavWeather
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Install the necessary packages to run this project
 
 ### `npm start`
 
