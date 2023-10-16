@@ -5,6 +5,7 @@
     width: 100%;
     align-items: center;
     background-color: white;
+    border-bottom: 1px solid #d7d7d7;
 }
 
 .TimeTableItem_time {
