@@ -9,10 +9,7 @@ html, body, #root {
   padding: 3rem 1rem 1rem;
   text-align: center;
   justify-content: center;
-  background-color: #eceeef;
-}
-
-.height100 {
+  /*background-color: #eceeef;*/
   height: 100%;
 }
 
