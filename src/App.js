@@ -4,6 +4,7 @@ import { TodayMemoized } from "./components/Today";
 import Search from "./components/Search";
 import TimeTableList from "./components/TimeTableList";
 import "./App.css";
+import { Footer } from "./components/Footer";
 
 export const WeatherContext = createContext(undefined);
 
@@ -39,12 +40,7 @@ function App() {
             </>
           )}
         </div>
-        <div className="Credits">
-          Powered by{" "}
-          <a href="https://www.weatherapi.com/" title="Free Weather API">
-            WeatherAPI.com
-          </a>
-        </div>
+        <Footer />
       </div>
     </WeatherContext.Provider>
   );
