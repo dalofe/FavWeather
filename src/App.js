@@ -3,10 +3,8 @@ import { ForecastListMemoized } from "./components/ForecastList";
 import { TodayMemoized } from "./components/Today";
 import Search from "./components/Search";
 import TimeTableList from "./components/TimeTableList";
-import { dayName } from "./DateTime";
 import "./App.css";
 
-const ForecastContext = createContext(undefined);
 export const WeatherContext = createContext(undefined);
 
 function App() {
@@ -35,19 +33,7 @@ function App() {
           <Search />
           {fetchedData && (
             <>
-              <div className="TodayContainer">
-                <div>
-                  <h3
-                    style={{ marginTop: "2rem" }}
-                  >{`${fetchedData.location.name} (${fetchedData.location.country})`}</h3>
-                  <div>
-                    {`${localDateRef.current.getHours()}:${localDateRef.current.getMinutes()}hs | ${
-                      dayName[localDateRef.current.getDay()]
-                    }`}
-                  </div>
-                </div>
-                <TodayMemoized />
-              </div>
+              <TodayMemoized />
               <ForecastListMemoized />
               <TimeTableList />
             </>
@@ -64,5 +50,4 @@ function App() {
   );
 }
 
-export { ForecastContext };
 export default App;

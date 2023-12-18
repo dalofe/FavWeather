@@ -5,6 +5,17 @@
     border-bottom-left-radius: 0.25rem;
 }
 
+.TodayContainer {
+    width: 100%;
+    margin: 1rem 0;
+    background-color: white;
+    border-radius: 0.25rem;
+}
+
+.TodayContainer > div {
+    padding-bottom: 1rem;
+}
+
 .TodayGrid {
     display: grid;
     grid-template-areas: "icon temp info";
@@ -61,6 +72,11 @@
     .Today {
         border-top-right-radius: 0.25rem;
         border-bottom-left-radius: 0;
+    }
+
+    .TodayContainer {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
     }
 }
 

@@ -24,26 +24,8 @@ h1 {
   width: 100%;
 }
 
-.TodayContainer {
-  width: 100%;
-  margin: 1rem 0;
-  background-color: white;
-  border-radius: 0.25rem;
-}
-
-.TodayContainer > div {
-  padding-bottom: 1rem;
-}
-
 .Credits {
   margin-top: auto;
   padding: 2rem 0 1rem;
   font-size: 0.8rem;
-}
-
-@media (min-width: 640px) {
-  .TodayContainer {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-  }
 }
