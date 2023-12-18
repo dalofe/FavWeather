@@ -1,12 +1,14 @@
-import { useCallback } from "react";
+import { useCallback, useContext } from "react";
+import { WeatherContext } from "../App";
 
 export const useFetchData = ({
-  searchedPlace,
   setFetchedData,
   setActive,
   setPerHourList,
   localDateRef,
 }) => {
+  const { searchedPlace } = useContext(WeatherContext);
+
   let params = {
     location: searchedPlace,
     days: 7,

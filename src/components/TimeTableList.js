@@ -1,11 +1,14 @@
 import TimeTableItem from "./TimeTableItem";
 import styles from "../css/TimeTableList.module.css";
+import { useContext } from "react";
+import { WeatherContext } from "../App";
 
-const TimeTableList = ({ list, localDateNow }) => {
-  const listItems = list.hour.map((TimeTableData, index) => {
+const TimeTableList = () => {
+  const { perHourList, localDateRef } = useContext(WeatherContext);
+  const listItems = perHourList.hour.map((TimeTableData, index) => {
     const date = new Date(TimeTableData.time);
-    if (list.isToday) {
-      if (date > localDateNow) {
+    if (perHourList.isToday) {
+      if (date > localDateRef.current) {
         return (
           <TimeTableItem
             key={TimeTableData.time}
