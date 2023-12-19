@@ -1,7 +1,8 @@
 import styles from "./TimeTableItem.module.css";
 
-const TimeTableItem = ({ timeData, hours }) => {
-  const time = `${hours}:00`;
+const TimeTableItem = ({ timeData }) => {
+  const date = new Date(timeData.time);
+  const time = `${date.getHours()}:00`;
 
   const mapUvIndex = (value) => {
     if (value < 2) {

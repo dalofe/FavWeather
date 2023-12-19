@@ -1,4 +1,4 @@
-import { useState, useRef, createContext } from "react";
+import { useState, createContext } from "react";
 import { ForecastListMemoized } from "./components/ForecastList/ForecastList";
 import { TodayMemoized } from "./components/Today/Today";
 import Search from "./components/Search/Search";
@@ -9,7 +9,6 @@ import { Footer } from "./components/Footer/Footer";
 export const WeatherContext = createContext(undefined);
 
 function App() {
-  const localDateRef = useRef();
   const [fetchedData, setFetchedData] = useState(undefined);
   const [searchedPlace, setSearchedPlace] = useState("");
   const [perHourList, setPerHourList] = useState(undefined);
@@ -18,15 +17,14 @@ function App() {
   return (
     <WeatherContext.Provider
       value={{
-        searchedPlace,
-        setSearchedPlace,
-        setFetchedData,
-        setActive,
-        setPerHourList,
-        localDateRef,
-        fetchedData,
         active,
+        fetchedData,
         perHourList,
+        searchedPlace,
+        setActive,
+        setFetchedData,
+        setPerHourList,
+        setSearchedPlace,
       }}
     >
       <div className="App">

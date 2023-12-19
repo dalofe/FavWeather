@@ -3,13 +3,8 @@ import styles from "./Search.module.css";
 import { WeatherContext } from "../../App";
 
 export default function Search() {
-  const {
-    setSearchedPlace,
-    setFetchedData,
-    setActive,
-    setPerHourList,
-    localDateRef,
-  } = useContext(WeatherContext);
+  const { setSearchedPlace, setFetchedData, setActive, setPerHourList } =
+    useContext(WeatherContext);
 
   const [searchInput, setSearchInput] = useState("");
   const handleInput = (e) => {
@@ -36,7 +31,6 @@ export default function Search() {
               setFetchedData(res);
               setActive(res.forecast.forecastday[0].date);
               setPerHourList(res.forecast.forecastday[0]);
-              localDateRef.current = new Date(res.location.localtime);
             }
           });
       } catch (error) {

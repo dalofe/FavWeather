@@ -4,7 +4,8 @@ import { WeatherContext } from "../../App";
 import { dayName } from "../../DateTime";
 
 const Today = () => {
-  const { fetchedData, localDateRef } = useContext(WeatherContext);
+  const { fetchedData } = useContext(WeatherContext);
+  const localDate = new Date(fetchedData.location.localtime);
 
   return (
     <div className={styles.TodayContainer}>
@@ -13,8 +14,8 @@ const Today = () => {
           style={{ marginTop: "2rem" }}
         >{`${fetchedData.location.name} (${fetchedData.location.country})`}</h3>
         <div>
-          {`${localDateRef.current.getHours()}:${localDateRef.current.getMinutes()}hs | ${
-            dayName[localDateRef.current.getDay()]
+          {`${localDate.getHours()}:${localDate.getMinutes()}hs | ${
+            dayName[localDate.getDay()]
           }`}
         </div>
       </div>
