@@ -1,16 +1,14 @@
-import { useState, createContext } from "react";
+import { useState } from "react";
 import { ForecastListMemoized } from "./components/ForecastList/ForecastList";
 import { TodayMemoized } from "./components/Today/Today";
 import Search from "./components/Search/Search";
 import TimeTableList from "./components/TimeTableList/TimeTableList";
 import "./App.css";
 import { Footer } from "./components/Footer/Footer";
-
-export const WeatherContext = createContext(undefined);
+import { WeatherContext } from "./context/WeatherContext";
 
 function App() {
   const [fetchedData, setFetchedData] = useState(undefined);
-  const [searchedPlace, setSearchedPlace] = useState("");
   const [perHourList, setPerHourList] = useState(undefined);
   const [active, setActive] = useState(undefined);
 
@@ -20,11 +18,9 @@ function App() {
         active,
         fetchedData,
         perHourList,
-        searchedPlace,
         setActive,
         setFetchedData,
         setPerHourList,
-        setSearchedPlace,
       }}
     >
       <div className="App">

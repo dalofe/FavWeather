@@ -2,7 +2,7 @@ import { memo, useContext } from "react";
 
 import ForecastItem from "../ForecastItem/ForecastItem";
 import styles from "./ForecastList.module.css";
-import { WeatherContext } from "../../App";
+import { WeatherContext } from "../../context/WeatherContext";
 
 const ForecastList = () => {
   const { fetchedData } = useContext(WeatherContext);

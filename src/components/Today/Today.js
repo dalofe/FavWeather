@@ -1,6 +1,6 @@
 import { memo, useContext } from "react";
 import styles from "./Today.module.css";
-import { WeatherContext } from "../../App";
+import { WeatherContext } from "../../context/WeatherContext";
 import { dayName } from "../../DateTime";
 
 const Today = () => {

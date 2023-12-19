@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { WeatherContext } from "../../App";
+import { WeatherContext } from "../../context/WeatherContext";
 import styles from "./ForecastItem.module.css";
 import { dayName, monthName } from "../../DateTime";
 

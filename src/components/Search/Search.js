@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import styles from "./Search.module.css";
-import { WeatherContext } from "../../App";
+import { WeatherContext } from "../../context/WeatherContext";
 
 export default function Search() {
-  const { setSearchedPlace, setFetchedData, setActive, setPerHourList } =
+  const { setFetchedData, setActive, setPerHourList } =
     useContext(WeatherContext);
 
   const [searchInput, setSearchInput] = useState("");
@@ -18,7 +18,6 @@ export default function Search() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setSearchedPlace(searchInput);
     if (searchInput.length > 3) {
       try {
         fetch(

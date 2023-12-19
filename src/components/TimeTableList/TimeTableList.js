@@ -1,7 +1,7 @@
 import TimeTableItem from "../TimeTableItem/TimeTableItem";
 import styles from "./TimeTableList.module.css";
 import { useContext } from "react";
-import { WeatherContext } from "../../App";
+import { WeatherContext } from "../../context/WeatherContext";
 
 const TimeTableList = () => {
   const { fetchedData, perHourList } = useContext(WeatherContext);
