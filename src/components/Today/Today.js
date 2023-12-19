@@ -1,7 +1,7 @@
 import { memo, useContext } from "react";
-import styles from "../css/Today.module.css";
-import { WeatherContext } from "../App";
-import { dayName } from "../DateTime";
+import styles from "./Today.module.css";
+import { WeatherContext } from "../../App";
+import { dayName } from "../../DateTime";
 
 const Today = () => {
   const { fetchedData, localDateRef } = useContext(WeatherContext);

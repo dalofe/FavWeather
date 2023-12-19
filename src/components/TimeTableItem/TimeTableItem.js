@@ -1,4 +1,4 @@
-import styles from "../css/TimeTableItem.module.css";
+import styles from "./TimeTableItem.module.css";
 
 const TimeTableItem = ({ timeData, hours }) => {
   const time = `${hours}:00`;

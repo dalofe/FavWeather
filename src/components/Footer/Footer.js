@@ -1,4 +1,4 @@
-import styles from "../css/Footer.module.css";
+import styles from "./Footer.module.css";
 export const Footer = () => {
   return (
     <div className={styles.Credits}>

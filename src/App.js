@@ -1,10 +1,10 @@
 import { useState, useRef, createContext } from "react";
-import { ForecastListMemoized } from "./components/ForecastList";
-import { TodayMemoized } from "./components/Today";
-import Search from "./components/Search";
-import TimeTableList from "./components/TimeTableList";
+import { ForecastListMemoized } from "./components/ForecastList/ForecastList";
+import { TodayMemoized } from "./components/Today/Today";
+import Search from "./components/Search/Search";
+import TimeTableList from "./components/TimeTableList/TimeTableList";
 import "./App.css";
-import { Footer } from "./components/Footer";
+import { Footer } from "./components/Footer/Footer";
 
 export const WeatherContext = createContext(undefined);
 

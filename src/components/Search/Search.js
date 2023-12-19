@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import styles from "../css/Search.module.css";
-import { WeatherContext } from "../App";
+import styles from "./Search.module.css";
+import { WeatherContext } from "../../App";
 
 export default function Search() {
   const {

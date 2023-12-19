@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { WeatherContext } from "../App";
-import styles from "../css/ForecastItem.module.css";
-import { dayName, monthName } from "../DateTime";
+import { WeatherContext } from "../../App";
+import styles from "./ForecastItem.module.css";
+import { dayName, monthName } from "../../DateTime";
 
 export default function ForecastItem({ item }) {
   const { active, setActive, setPerHourList } = useContext(WeatherContext);
